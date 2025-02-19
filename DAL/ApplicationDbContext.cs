@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Domain.Entity;
 using System.Reflection;
+using DAL.Interceptors;
 
 namespace DAL
 {
@@ -18,7 +19,7 @@ namespace DAL
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            base.OnConfiguring(optionsBuilder);
+            optionsBuilder.AddInterceptors(new DateInterceptors());
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

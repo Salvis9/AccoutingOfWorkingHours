@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "i4X6zhPn6lvXOTTsBNlpoAO5eeaTN2pUTcKlgGC8MIiu44GTO5yn1TkQmx1CpA8ai4a0TlQ93sSgnvJwiIB/xg==",
+  "dgSpecHash": "7Kv17ec5YBFqiD+Pl3blNxmFgajOgPsUuv6xcQvE69R5HHlnPq2m7H4KJ4yx7hL/lDioiUo2AMaFjvFx/WH5Kg==",
   "success": true,
   "projectFilePath": "C:\\Users\\sl\\source\\repos\\TestForGit\\Application\\Application.csproj",
   "expectedPackageFiles": [
@@ -14,7 +14,8 @@
     "C:\\Users\\sl\\.nuget\\packages\\microsoft.extensions.logging\\7.0.0\\microsoft.extensions.logging.7.0.0.nupkg.sha512",
     "C:\\Users\\sl\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\sl\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
-    "C:\\Users\\sl\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512"
+    "C:\\Users\\sl\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "C:\\Users\\sl\\.nuget\\packages\\serilog\\4.2.0\\serilog.4.2.0.nupkg.sha512"
   ],
   "logs": []
 }

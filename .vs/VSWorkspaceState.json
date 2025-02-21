@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Domain",
+    "\\Domain\\Entity",
+    "\\WebApplication2"
   ],
+  "SelectedNode": "\\Domain\\Entity\\Report.cs",
   "PreviewInSolutionExplorer": false
 }

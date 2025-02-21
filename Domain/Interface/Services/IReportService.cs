@@ -1,4 +1,4 @@
-﻿using Domain.Dto;
+﻿using Domain.Dto.Report;
 using Domain.Result;
 using System;
 using System.Collections.Generic;
@@ -15,5 +15,7 @@ namespace Domain.Interface.Services
         Task<CollectionResult<ReportDto>> GetReportsAsync(long userId);
         // Получение отчета по идентификатору
         Task<BaseResult<ReportDto>> GetReportByIdAsync(long id);
+        // Создание отчета с базовыми параметрами
+        Task<BaseResult<ReportDto>> CreateReportAsync(CreateReportDto dto);
     }
 }

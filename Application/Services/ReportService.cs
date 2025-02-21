@@ -13,6 +13,7 @@ using Serilog;
 using Application.Resources;
 using Domain.Enum;
 using Domain.Dto.Report;
+using Domain.Interface.Validations;
 
 namespace Application.Services
 {
@@ -20,13 +21,16 @@ namespace Application.Services
     {
         private readonly IBaseRepository<Report> _reportRepository;
         private readonly IBaseRepository<User> _userRepository;
+        private readonly IReportValidator _reportValidator;
         private readonly Serilog.ILogger _logger;
 
-        public ReportService(IBaseRepository<Report> reportRepository, Serilog.ILogger logger, IBaseRepository<User> userRepository)
+        public ReportService(IBaseRepository<Report> reportRepository, Serilog.ILogger logger,
+            IBaseRepository<User> userRepository, IReportValidator reportValidator)
         {
             _reportRepository = reportRepository;
             _logger = logger;
             _userRepository = userRepository;
+            _reportValidator = reportValidator;
         }
 
 
@@ -105,7 +109,9 @@ namespace Application.Services
         {
             try
             {
-
+                var user = await _userRepository.GetAll().FirstOrDefaultAsync(x => x.Id == dto.UserId);
+                var report = await _reportRepository.GetAll().FirstOrDefaultAsync(x => x.Name == dto.Name);
+                var result = _reportValidator.CreateValidator(report, user);
             }
             catch (Exception ex)
             {

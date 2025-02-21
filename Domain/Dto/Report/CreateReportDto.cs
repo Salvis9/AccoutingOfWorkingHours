@@ -6,7 +6,5 @@ using System.Threading.Tasks;
 
 namespace Domain.Dto.Report
 {
-    internal interface CreateReportDto
-    {
-    }
+    public record CreateReportDto(string Name, string Description, long UserId);
 }

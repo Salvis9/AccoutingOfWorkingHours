@@ -10,6 +10,7 @@ namespace Domain.Enum
     {
         ReportsNotFound = 0,
         ReportNotFound = 1,
+        ReportAlreadyExists = 2,
         IternalServerError = 10
         
     }

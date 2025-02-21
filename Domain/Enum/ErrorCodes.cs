@@ -8,9 +8,13 @@ namespace Domain.Enum
 {
     public enum ErrorCodes
     {
+        // 0-11 = коды ошибок для Report 
         ReportsNotFound = 0,
         ReportNotFound = 1,
         ReportAlreadyExists = 2,
+        
+        UserNotFound = 11,
+
         IternalServerError = 10
         
     }

@@ -49,6 +49,7 @@ namespace Application.Validations
                     ErrorCode = (int)ErrorCodes.UserNotFound
                 };
             }
+            return new BaseResult();
         }
     }
 }

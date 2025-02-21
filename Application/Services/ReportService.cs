@@ -112,6 +112,21 @@ namespace Application.Services
                 var user = await _userRepository.GetAll().FirstOrDefaultAsync(x => x.Id == dto.UserId);
                 var report = await _reportRepository.GetAll().FirstOrDefaultAsync(x => x.Name == dto.Name);
                 var result = _reportValidator.CreateValidator(report, user);
+                if (!result.IsSuccess)
+                {
+                    return new BaseResult<ReportDto>()
+                    {
+                        ErrorMessage = result.ErrorMessage,
+                        ErrorCode = result.ErrorCode
+                    };
+                }
+                report = new Report()
+                {
+                    Name = dto.Name,
+                    Description = dto.Description,
+                    UserId = user.Id
+                };
+                await _reportRepository.CreateAsync(report);
             }
             catch (Exception ex)
             {
@@ -122,6 +137,7 @@ namespace Application.Services
                     ErrorCode = (int)ErrorCodes.IternalServerError
                 };
             }
+
         }
     }
 }

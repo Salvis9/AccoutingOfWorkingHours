@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "slE5Kq9StVKz9vUGYfY7kh7VsnMJqarUaJiFHYtbiyP6mRG19+FPbw1jAPeFsktQuPhQipoRNQXZOtsel/CTKw==",
+  "dgSpecHash": "WUUg+zrfS0gae+Y/MPkJBUqA6OcvomvzTLYUy5Z/9tIEnz6nmu1/A6dSBWME7TQ6d2JgZML/zVQyTk/4hMBeEw==",
   "success": true,
   "projectFilePath": "C:\\Users\\sl\\source\\repos\\TestForGit\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sl\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\sl\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\sl\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
+    "C:\\Users\\sl\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.11.0\\fluentvalidation.dependencyinjectionextensions.11.11.0.nupkg.sha512",
     "C:\\Users\\sl\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\sl\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\sl\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.5\\microsoft.data.sqlclient.5.1.5.nupkg.sha512",

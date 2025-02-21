@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Dto
+namespace Domain.Interface.Validations
 {
-    public record ReportDto(long Id, string Name, string Discription, string CreatedAt);
+    internal class IBaseValidator
+    {
+    }
 }

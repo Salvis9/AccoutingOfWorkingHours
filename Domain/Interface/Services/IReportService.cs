@@ -13,5 +13,7 @@ namespace Domain.Interface.Services
     {
         // Получение всех отчетов пользователя
         Task<CollectionResult<ReportDto>> GetReportsAsync(long userId);
+        // Получение отчета по идентификатору
+        Task<BaseResult<ReportDto>> GetReportByIdAsync(long id);
     }
 }

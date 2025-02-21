@@ -10,10 +10,10 @@
     <Folder Include="DependencyInjection\" />
     <Folder Include="Mapping\" />
     <Folder Include="Services\" />
-    <Folder Include="Validations\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.11.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.20" />
     <PackageReference Include="Serilog" Version="4.2.0" />
   </ItemGroup>

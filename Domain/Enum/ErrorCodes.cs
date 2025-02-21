@@ -9,6 +9,7 @@ namespace Domain.Enum
     public enum ErrorCodes
     {
         ReportsNotFound = 0,
+        ReportNotFound = 1,
         IternalServerError = 10
         
     }

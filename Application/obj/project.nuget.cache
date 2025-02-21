@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "7Kv17ec5YBFqiD+Pl3blNxmFgajOgPsUuv6xcQvE69R5HHlnPq2m7H4KJ4yx7hL/lDioiUo2AMaFjvFx/WH5Kg==",
+  "dgSpecHash": "+bst+tKUwGEBkxi6+PqPjHcw8Q1M29WlcXomN5GLJMWHgaOYLk66VYTUqzBICbSzA7EO4fTr+/X4uDJCOSssmw==",
   "success": true,
   "projectFilePath": "C:\\Users\\sl\\source\\repos\\TestForGit\\Application\\Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\sl\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
+    "C:\\Users\\sl\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.11.0\\fluentvalidation.dependencyinjectionextensions.11.11.0.nupkg.sha512",
     "C:\\Users\\sl\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.20\\microsoft.entityframeworkcore.7.0.20.nupkg.sha512",
     "C:\\Users\\sl\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.20\\microsoft.entityframeworkcore.abstractions.7.0.20.nupkg.sha512",
     "C:\\Users\\sl\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.20\\microsoft.entityframeworkcore.analyzers.7.0.20.nupkg.sha512",

@@ -11,6 +11,10 @@ namespace Application.Mapping
 {
     public class ReportMapping : Profile
     {
-        CreateMap<Report, ReportDto>().ReverseMap();
+        public ReportMapping()
+        {
+            CreateMap<Report, ReportDto>().ReverseMap();
+        }
+        
     }
 }

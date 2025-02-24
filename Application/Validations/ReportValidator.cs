@@ -29,8 +29,6 @@ namespace Application.Validations
 
         public BaseResult CreateValidator(Report report, User user)
         {
-            // Начал писать валидатор, чтобы проверять запрашиваемые данные на nul
-            // Валидатор внедрить в ReportService для метода ReportServices.CreateReportAsync
             // Валидатор необходим для гибкости метода создания отчета (можно писать проверки на null в CreateReportAsync,но лучше добавить гибкости)
             if (report != null)
             {

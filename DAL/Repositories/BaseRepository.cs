@@ -1,4 +1,5 @@
-﻿using Domain.Interface.Repositories;
+﻿using Domain.Interface;
+using Domain.Interface.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,16 +19,16 @@ namespace DAL.Repositories
         {
             return _dbContext.Set<TEntity>();
         }
-        public Task<TEntity> CreateAsync(TEntity entity)
+        public async Task<TEntity> CreateAsync(TEntity entity)
         {
             if (entity == null)
             {
                 throw new ArgumentNullException("Entity is null");
             }
-            _dbContext.Add(entity);
+            await _dbContext.AddAsync(entity);
             _dbContext.SaveChanges();
 
-            return Task.FromResult(entity);
+            return entity;
         }
         public Task<TEntity> UpdateAsync(TEntity entity)
         {
@@ -36,7 +37,7 @@ namespace DAL.Repositories
                 throw new ArgumentNullException("Entity is null");
             }
             _dbContext.Update(entity);
-            _dbContext.SaveChanges();
+            _dbContext.SaveChangesAsync();
 
             return Task.FromResult(entity);
         }
@@ -47,7 +48,7 @@ namespace DAL.Repositories
                 throw new ArgumentNullException("Entity is null");
             }
             _dbContext.Remove(entity);
-            _dbContext.SaveChanges();
+            _dbContext.SaveChangesAsync();
 
             return Task.FromResult(entity);
         }

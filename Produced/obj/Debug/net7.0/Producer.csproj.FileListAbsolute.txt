@@ -10,3 +10,15 @@ C:\Users\sl\source\repos\Produced\obj\Debug\net7.0\Producer.dll
 C:\Users\sl\source\repos\Produced\obj\Debug\net7.0\refint\Producer.dll
 C:\Users\sl\source\repos\Produced\obj\Debug\net7.0\Producer.pdb
 C:\Users\sl\source\repos\Produced\obj\Debug\net7.0\ref\Producer.dll
+C:\Users\sl\source\repos\TestForGit\Produced\bin\Debug\net7.0\Producer.deps.json
+C:\Users\sl\source\repos\TestForGit\Produced\bin\Debug\net7.0\Producer.dll
+C:\Users\sl\source\repos\TestForGit\Produced\bin\Debug\net7.0\Producer.pdb
+C:\Users\sl\source\repos\TestForGit\Produced\obj\Debug\net7.0\Producer.csproj.AssemblyReference.cache
+C:\Users\sl\source\repos\TestForGit\Produced\obj\Debug\net7.0\Producer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sl\source\repos\TestForGit\Produced\obj\Debug\net7.0\Producer.AssemblyInfoInputs.cache
+C:\Users\sl\source\repos\TestForGit\Produced\obj\Debug\net7.0\Producer.AssemblyInfo.cs
+C:\Users\sl\source\repos\TestForGit\Produced\obj\Debug\net7.0\Producer.csproj.CoreCompileInputs.cache
+C:\Users\sl\source\repos\TestForGit\Produced\obj\Debug\net7.0\Producer.dll
+C:\Users\sl\source\repos\TestForGit\Produced\obj\Debug\net7.0\refint\Producer.dll
+C:\Users\sl\source\repos\TestForGit\Produced\obj\Debug\net7.0\Producer.pdb
+C:\Users\sl\source\repos\TestForGit\Produced\obj\Debug\net7.0\ref\Producer.dll

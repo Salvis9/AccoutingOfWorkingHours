@@ -15,6 +15,7 @@ namespace DAL
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
+            // Альтернатива создания БД - миграции. Изучить их реализацию
             Database.EnsureCreated();
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

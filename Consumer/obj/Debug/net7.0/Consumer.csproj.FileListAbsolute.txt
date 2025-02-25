@@ -10,3 +10,15 @@ C:\Users\sl\source\repos\Consumer\obj\Debug\net7.0\Consumer.dll
 C:\Users\sl\source\repos\Consumer\obj\Debug\net7.0\refint\Consumer.dll
 C:\Users\sl\source\repos\Consumer\obj\Debug\net7.0\Consumer.pdb
 C:\Users\sl\source\repos\Consumer\obj\Debug\net7.0\ref\Consumer.dll
+C:\Users\sl\source\repos\TestForGit\Consumer\bin\Debug\net7.0\Consumer.deps.json
+C:\Users\sl\source\repos\TestForGit\Consumer\bin\Debug\net7.0\Consumer.dll
+C:\Users\sl\source\repos\TestForGit\Consumer\bin\Debug\net7.0\Consumer.pdb
+C:\Users\sl\source\repos\TestForGit\Consumer\obj\Debug\net7.0\Consumer.csproj.AssemblyReference.cache
+C:\Users\sl\source\repos\TestForGit\Consumer\obj\Debug\net7.0\Consumer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sl\source\repos\TestForGit\Consumer\obj\Debug\net7.0\Consumer.AssemblyInfoInputs.cache
+C:\Users\sl\source\repos\TestForGit\Consumer\obj\Debug\net7.0\Consumer.AssemblyInfo.cs
+C:\Users\sl\source\repos\TestForGit\Consumer\obj\Debug\net7.0\Consumer.csproj.CoreCompileInputs.cache
+C:\Users\sl\source\repos\TestForGit\Consumer\obj\Debug\net7.0\Consumer.dll
+C:\Users\sl\source\repos\TestForGit\Consumer\obj\Debug\net7.0\refint\Consumer.dll
+C:\Users\sl\source\repos\TestForGit\Consumer\obj\Debug\net7.0\Consumer.pdb
+C:\Users\sl\source\repos\TestForGit\Consumer\obj\Debug\net7.0\ref\Consumer.dll

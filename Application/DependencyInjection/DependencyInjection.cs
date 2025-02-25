@@ -6,6 +6,7 @@ using Domain.Dto.Report;
 using Domain.Interface.Services;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
+using Domain.Interface.Validations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,7 @@ namespace Application.DependencyInjection
 
         private static void InitService(this IServiceCollection services)
         {
+            services.AddScoped<IReportValidator, ReportValidator>();
             services.AddScoped<IValidator<CreateReportDto>, CreateReportValidator>();
             services.AddScoped<IValidator<UpdateReportDto>, UpdateReportValidator>();
 

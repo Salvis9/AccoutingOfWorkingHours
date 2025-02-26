@@ -36,6 +36,116 @@ namespace Application.Services
             _mapper = mapper;
         }
 
+        public async Task<CollectionResult<TimeSheetDto>> GetAllTimeSheetsAsync(long userId)
+        {
+            TimeSheetDto[] timeSheets;
+            try
+            {
+                timeSheets = await _timeSheetRepository.GetAll()
+                    .Where(x => x.UserId == userId)
+                    .Select(x => new TimeSheetDto(x.Id, x.Hours, x.Description, x.CreatedAt.ToLongDateString()))
+                    .ToArrayAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, ex.Message);
+                return new CollectionResult<TimeSheetDto>()
+                {
+                    ErrorMessage = ErrorMessage.InternalServerError,
+                    ErrorCode = (int)ErrorCodes.IternalServerError
+                };
+            }
+
+            if (!timeSheets.Any())
+            {
+                _logger.Warning(ErrorMessage.TimeSheetsNotFound, timeSheets.Length);
+                return new CollectionResult<TimeSheetDto>
+                {
+                    ErrorMessage = ErrorMessage.TimeSheetsNotFound,
+                    ErrorCode = (int)ErrorCodes.TimeSheetsNotFound
+                };
+            }
+
+            return new CollectionResult<TimeSheetDto>()
+            {
+                Data = timeSheets,
+                Count = timeSheets.Length
+            };
+        }
+
+        public async Task<CollectionResult<TimeSheetDto>> GetMonthTimeSheetsAsync(long userId, int year, int month)
+        {
+            TimeSheetDto[] timeSheets;
+            try
+            {
+                timeSheets = await _timeSheetRepository.GetAll()
+                    .Where(x => x.UserId == userId && x.CreatedAt.Year == year && x.CreatedAt.Month == month)
+                    .Select(x => new TimeSheetDto(x.Id, x.Hours, x.Description, x.CreatedAt.ToLongDateString()))
+                    .ToArrayAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, ex.Message);
+                return new CollectionResult<TimeSheetDto>()
+                {
+                    ErrorMessage = ErrorMessage.InternalServerError,
+                    ErrorCode = (int)ErrorCodes.IternalServerError
+                };
+            }
+
+            if (!timeSheets.Any())
+            {
+                _logger.Warning(ErrorMessage.TimeSheetsNotFound, timeSheets.Length);
+                return new CollectionResult<TimeSheetDto>
+                {
+                    ErrorMessage = ErrorMessage.TimeSheetsNotFound,
+                    ErrorCode = (int)ErrorCodes.TimeSheetsNotFound
+                };
+            }
+
+            return new CollectionResult<TimeSheetDto>()
+            {
+                Data = timeSheets,
+                Count = timeSheets.Length
+            };
+        }
+
+        public async Task<CollectionResult<TimeSheetDto>> GetDayTimeSheetsAsync(long userId, DateTime date)
+        {
+            TimeSheetDto[] timeSheets;
+            try
+            {
+                timeSheets = await _timeSheetRepository.GetAll()
+                    .Where(x => x.UserId == userId && x.CreatedAt.Date == date.Date)
+                    .Select(x => new TimeSheetDto(x.Id, x.Hours, x.Description, x.CreatedAt.ToLongDateString()))
+                    .ToArrayAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, ex.Message);
+                return new CollectionResult<TimeSheetDto>()
+                {
+                    ErrorMessage = ErrorMessage.InternalServerError,
+                    ErrorCode = (int)ErrorCodes.IternalServerError
+                };
+            }
+
+            if (!timeSheets.Any())
+            {
+                _logger.Warning(ErrorMessage.TimeSheetsNotFound, timeSheets.Length);
+                return new CollectionResult<TimeSheetDto>
+                {
+                    ErrorMessage = ErrorMessage.TimeSheetsNotFound,
+                    ErrorCode = (int)ErrorCodes.TimeSheetsNotFound
+                };
+            }
+
+            return new CollectionResult<TimeSheetDto>()
+            {
+                Data = timeSheets,
+                Count = timeSheets.Length
+            };
+        }
 
         public async Task<CollectionResult<TimeSheetDto>> GetTimeSheetsAsync(long taskEntityId)
         {
@@ -118,22 +228,36 @@ namespace Application.Services
             try
             {
                 var taskEntity = await _taskEntityRepository.GetAll().FirstOrDefaultAsync(x => x.Id == dto.TaskEntityId);
-
                 // Что передавать в timeSheet??? Hours??? у других сервисов передавалось Name
                 var timeSheet = await _timeSheetRepository.GetAll().FirstOrDefaultAsync(x => x.Hours == dto.Hours);
+                // Подсчет суммы часов всех проводок за один день для пользователя. Далее отправка в валидатор, если >24, то нельзя
+                var existingHours = await _timeSheetRepository.GetAll()
+                    .Where(x => x.UserId == timeSheet.UserId && x.CreatedAt.Date == timeSheet.CreatedAt.Date)
+                    .SumAsync(x => x.Hours);
 
-                var result = _timeSheetValidator.CreateValidator(timeSheet, taskEntity);
-                if (!result.IsSuccess)
+                var resultCreate = _timeSheetValidator.CreateValidator(timeSheet, taskEntity);
+                if (!resultCreate.IsSuccess)
                 {
                     return new BaseResult<TimeSheetDto>()
                     {
-                        ErrorMessage = result.ErrorMessage,
-                        ErrorCode = result.ErrorCode
+                        ErrorMessage = resultCreate.ErrorMessage,
+                        ErrorCode = resultCreate.ErrorCode
+                    };
+                }
+                var resultHoursLimit = _timeSheetValidator.HoursLimitPerDayValidator(timeSheet, existingHours);
+                if (!resultHoursLimit.IsSuccess)
+                {
+                    return new BaseResult<TimeSheetDto>()
+                    {
+                        ErrorMessage = resultHoursLimit.ErrorMessage,
+                        ErrorCode = resultHoursLimit.ErrorCode
                     };
                 }
                 timeSheet = new TimeSheet()
                 {
                     Hours = dto.Hours,
+                    Description = dto.Description,
+                    UserId = dto.UserId,
                     TaskEntityId = taskEntity.Id
                 };
                 await _timeSheetRepository.CreateAsync(timeSheet);
@@ -189,13 +313,27 @@ namespace Application.Services
             try
             {
                 var timeSheet = await _timeSheetRepository.GetAll().FirstOrDefaultAsync(x => x.Id == dto.Id);
-                var result = _timeSheetValidator.ValidateOnNull(timeSheet);
-                if (!result.IsSuccess)
+                var existingHours = await _timeSheetRepository.GetAll()
+                    .Where(x => x.UserId == timeSheet.UserId && x.CreatedAt.Date == timeSheet.CreatedAt.Date)
+                    .SumAsync(x => x.Hours);
+
+                var resultOnNull = _timeSheetValidator.ValidateOnNull(timeSheet);
+                if (!resultOnNull.IsSuccess)
                 {
                     return new BaseResult<TimeSheetDto>()
                     {
-                        ErrorMessage = result.ErrorMessage,
-                        ErrorCode = result.ErrorCode
+                        ErrorMessage = resultOnNull.ErrorMessage,
+                        ErrorCode = resultOnNull.ErrorCode
+                    };
+                }
+
+                var resultHoursLimit = _timeSheetValidator.HoursLimitPerDayValidator(timeSheet, existingHours);
+                if (!resultHoursLimit.IsSuccess)
+                {
+                    return new BaseResult<TimeSheetDto>()
+                    {
+                        ErrorMessage = resultHoursLimit.ErrorMessage,
+                        ErrorCode = resultHoursLimit.ErrorCode
                     };
                 }
 

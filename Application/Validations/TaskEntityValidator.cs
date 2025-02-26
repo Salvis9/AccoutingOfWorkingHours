@@ -45,6 +45,14 @@ namespace Application.Validations
                     ErrorCode = (int)ErrorCodes.ReportNotFound
                 };
             }
+            if (!report.IsActive)
+            {
+                return new BaseResult()
+                {
+                    ErrorMessage = ErrorMessage.ReportInactive,
+                    ErrorCode = (int)ErrorCodes.ReportInactive
+                };
+            }
             return new BaseResult();
         }
     }

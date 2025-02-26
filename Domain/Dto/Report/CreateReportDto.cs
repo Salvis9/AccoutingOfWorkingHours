@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace Domain.Dto.Report
 {
-    public record CreateReportDto(string Name, string Description, long UserId);
+    public record CreateReportDto(string Name, string Description, bool IsActive, long UserId);
 }

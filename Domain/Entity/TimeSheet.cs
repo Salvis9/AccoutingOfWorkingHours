@@ -12,8 +12,10 @@ namespace Domain.Entity
         public long Id { get; set; }
         public double Hours { get; set; }
         public string Description { get; set; }
+        public User User { get; set; }
+        public long UserId { get; set; }
         public TaskEntity TaskEntity { get; set; }
-        public long? TaskEntityId { get; set; } //Nullable, чтобы задача могла быть изменена только в разрешенных случаях
+        public long TaskEntityId { get; set; }
         public DateTime CreatedAt { get; set; }
         public long CreatedBy { get; set; }
         public DateTime? UpdatedAt { get; set; }

@@ -131,7 +131,8 @@ namespace Application.Services
                 {
                     Name = dto.Name,
                     Description = dto.Description,
-                    UserId = user.Id
+                    UserId = user.Id,
+                    IsActive = dto.IsActive
                 };
                 await _reportRepository.CreateAsync(report);
                 return new BaseResult<ReportDto>()

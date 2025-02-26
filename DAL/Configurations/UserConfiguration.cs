@@ -22,6 +22,11 @@ namespace DAL.Configurations
                 .WithOne(x => x.User)
                 .HasForeignKey(x => x.UserId)
                 .HasPrincipalKey(x => x.Id);
+
+            builder.HasMany<TimeSheet>(x => x.TimeSheets)
+                .WithOne(x => x.User)
+                .HasForeignKey(x => x.UserId)
+                .HasPrincipalKey(x => x.Id);
         }
     }
 }

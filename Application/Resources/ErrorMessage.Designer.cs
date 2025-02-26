@@ -79,6 +79,15 @@ namespace Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Проект не активен.
+        /// </summary>
+        internal static string ReportInactive {
+            get {
+                return ResourceManager.GetString("ReportInactive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Отчёт не найден.
         /// </summary>
         internal static string ReportNotFound {
@@ -111,6 +120,15 @@ namespace Application.Resources {
         internal static string TaskEntityNotFound {
             get {
                 return ResourceManager.GetString("TaskEntityNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Неактивная задача.
+        /// </summary>
+        internal static string TaskInactive {
+            get {
+                return ResourceManager.GetString("TaskInactive", resourceCulture);
             }
         }
         

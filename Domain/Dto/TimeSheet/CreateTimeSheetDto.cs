@@ -7,5 +7,5 @@ using System.Threading.Tasks;
 
 namespace Domain.Dto.TimeSheet
 {
-    public record CreateTimeSheetDto(double Hours, string Description, long TaskEntityId);
+    public record CreateTimeSheetDto(double Hours, string Description, long UserId, long TaskEntityId);
 }

@@ -123,6 +123,9 @@
   <data name="ReportAlreadyExists" xml:space="preserve">
     <value>Report already exists</value>
   </data>
+  <data name="ReportInactive" xml:space="preserve">
+    <value>Report Inactive</value>
+  </data>
   <data name="ReportNotFound" xml:space="preserve">
     <value>Report not found</value>
   </data>
@@ -134,6 +137,9 @@
   </data>
   <data name="TaskEntityNotFound" xml:space="preserve">
     <value>Task entity not found</value>
+  </data>
+  <data name="TaskInactive" xml:space="preserve">
+    <value>Task inactive</value>
   </data>
   <data name="TasksEntityNotFound" xml:space="preserve">
     <value>Tasks entity not found</value>

@@ -12,7 +12,7 @@ namespace Application.Validations.FluentValidations.TimeSheet
     {
         public CreateTimeSheetValidator()
         {
-            RuleFor(x => x.Hours).NotEmpty();
+            RuleFor(x => x.Hours).NotEmpty().InclusiveBetween(0,24);
             RuleFor(x => x.Description).NotEmpty().MaximumLength(2000);
         }
     }

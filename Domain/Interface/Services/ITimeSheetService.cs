@@ -10,6 +10,9 @@ namespace Domain.Interface.Services
 {
     public interface ITimeSheetService
     {
+        Task<CollectionResult<TimeSheetDto>> GetAllTimeSheetsAsync(long userId);
+        Task<CollectionResult<TimeSheetDto>> GetMonthTimeSheetsAsync(long userId, int year, int month);
+        Task<CollectionResult<TimeSheetDto>> GetDayTimeSheetsAsync(long userId, DateTime date);
         // Получение всех проводок задачи
         Task<CollectionResult<TimeSheetDto>> GetTimeSheetsAsync(long taskEntityId);
 

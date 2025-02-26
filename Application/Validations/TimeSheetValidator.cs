@@ -41,8 +41,30 @@ namespace Application.Validations
             {
                 return new BaseResult()
                 {
-                    ErrorMessage = ErrorMessage.TasksEntityNotFound,
+                    ErrorMessage = ErrorMessage.TaskEntityNotFound,
                     ErrorCode = (int)ErrorCodes.TaskEntityNotFound
+                };
+            }
+
+            if (!taskEntity.IsActive)
+            {
+                return new BaseResult()
+                {
+                    ErrorMessage = ErrorMessage.TaskInactive,
+                    ErrorCode = (int)ErrorCodes.TaskInactive
+                };
+            }
+            return new BaseResult();
+        }
+
+        public BaseResult HoursLimitPerDayValidator(TimeSheet timeSheet, double existingHours)
+        {
+            if (existingHours + timeSheet.Hours > 24)
+            {
+                return new BaseResult()
+                {
+                    ErrorMessage = ErrorMessage.TaskInactive,
+                    ErrorCode = (int)ErrorCodes.TaskInactive
                 };
             }
             return new BaseResult();

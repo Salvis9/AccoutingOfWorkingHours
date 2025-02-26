@@ -12,6 +12,7 @@ namespace Domain.Enum
         ReportsNotFound = 0,
         ReportNotFound = 1,
         ReportAlreadyExists = 2,
+        ReportInactive = 3,
 
         // 10-19 = коды ошибок для User
         UserNotFound = 10,
@@ -22,6 +23,7 @@ namespace Domain.Enum
         TasksEntityNotFound = 20,
         TaskEntityNotFound = 21,
         TaskEntityAlreadyExists = 22,
+        TaskInactive = 23,
 
         // 30-39 = коды ошибок для TimeSheet
         TimeSheetsNotFound = 30,

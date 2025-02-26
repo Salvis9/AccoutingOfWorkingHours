@@ -131,7 +131,8 @@ namespace Application.Services
                 taskEntity = new TaskEntity()
                 {
                     Name = dto.Name,
-                    ReportId = report.Id
+                    ReportId = report.Id,
+                    IsActive = dto.IsActive
                 };
                 await _taskEntityRepository.CreateAsync(taskEntity);
                 return new BaseResult<TaskEntityDto>()

@@ -11,5 +11,6 @@ namespace Domain.Interface.Validations
     public interface ITimeSheetValidator : IBaseValidator<TimeSheet>
     {
         BaseResult CreateValidator(TimeSheet timeSheet, TaskEntity taskEntity);
+        BaseResult HoursLimitPerDayValidator(TimeSheet timeSheet, double existingHours);
     }
 }

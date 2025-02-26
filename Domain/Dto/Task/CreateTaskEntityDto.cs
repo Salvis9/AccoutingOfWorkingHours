@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace Domain.Dto.Task
 {
-    public record CreateTaskEntityDto(string Name, long ReportId);
+    public record CreateTaskEntityDto(string Name, bool IsActive, long ReportId);
 }

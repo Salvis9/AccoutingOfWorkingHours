@@ -129,6 +129,24 @@
   <data name="ReportsNotFound" xml:space="preserve">
     <value>Отчеты не найдены</value>
   </data>
+  <data name="TaskEntityAlreadyExists" xml:space="preserve">
+    <value>Задача с таким названием уже существует</value>
+  </data>
+  <data name="TaskEntityNotFound" xml:space="preserve">
+    <value>Задача не найдена</value>
+  </data>
+  <data name="TasksEntityNotFound" xml:space="preserve">
+    <value>Задачи не найдены</value>
+  </data>
+  <data name="TimeSheetAlreadyExists" xml:space="preserve">
+    <value>Проводка с таким названием уже существует</value>
+  </data>
+  <data name="TimeSheetNotFound" xml:space="preserve">
+    <value>Проводка не найдена</value>
+  </data>
+  <data name="TimeSheetsNotFound" xml:space="preserve">
+    <value>Проводки не найдены</value>
+  </data>
   <data name="UserNotFound" xml:space="preserve">
     <value>Пользователь не найден</value>
   </data>

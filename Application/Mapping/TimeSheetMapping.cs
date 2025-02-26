@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Domain.Dto.Report;
+using Domain.Dto.TimeSheet;
 using Domain.Entity;
 using System;
 using System.Collections.Generic;
@@ -9,18 +9,16 @@ using System.Threading.Tasks;
 
 namespace Application.Mapping
 {
-    public class ReportMapping : Profile
+    public class TimeSheetMapping : Profile
     {
-        public ReportMapping()
+        public TimeSheetMapping()
         {
-            CreateMap<Report, ReportDto>()
+            CreateMap<TimeSheet, TimeSheetDto>()
                 .ForCtorParam(ctorParamName: "Id", m => m.MapFrom(s => s.Id))
-                .ForCtorParam(ctorParamName: "Name", m => m.MapFrom(s => s.Name))
+                .ForCtorParam(ctorParamName: "Hours", m => m.MapFrom(s => s.Hours))
                 .ForCtorParam(ctorParamName: "Description", m => m.MapFrom(s => s.Description))
-                .ForCtorParam(ctorParamName: "IsActive", m => m.MapFrom(s => s.IsActive))
                 .ForCtorParam(ctorParamName: "CreatedAt", m => m.MapFrom(s => s.CreatedAt))
                 .ReverseMap();
         }
-        
     }
 }

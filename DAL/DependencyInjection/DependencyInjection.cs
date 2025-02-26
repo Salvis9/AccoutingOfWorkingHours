@@ -30,6 +30,8 @@ namespace DAL.DependencyInjection
         {
             services.AddScoped<IBaseRepository<User>, BaseRepository<User>>();
             services.AddScoped<IBaseRepository<Report>, BaseRepository<Report>>();
+            services.AddScoped<IBaseRepository<TaskEntity>, BaseRepository<TaskEntity>>();
+            services.AddScoped<IBaseRepository<TimeSheet>, BaseRepository<TimeSheet>>();
         }
     }
 }

@@ -129,6 +129,24 @@
   <data name="ReportsNotFound" xml:space="preserve">
     <value>Reports not found</value>
   </data>
+  <data name="TaskEntityAlreadyExists" xml:space="preserve">
+    <value>Task Entity Already Exists</value>
+  </data>
+  <data name="TaskEntityNotFound" xml:space="preserve">
+    <value>Task entity not found</value>
+  </data>
+  <data name="TasksEntityNotFound" xml:space="preserve">
+    <value>Tasks entity not found</value>
+  </data>
+  <data name="TimeSheetAlreadyExists" xml:space="preserve">
+    <value>Time Sheet Already Exists</value>
+  </data>
+  <data name="TimeSheetNotFound" xml:space="preserve">
+    <value>Time Sheet Not Found</value>
+  </data>
+  <data name="TimeSheetsNotFound" xml:space="preserve">
+    <value>Time Sheets Not Found</value>
+  </data>
   <data name="UserNotFound" xml:space="preserve">
     <value>User not found</value>
   </data>

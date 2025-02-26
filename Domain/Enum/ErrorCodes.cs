@@ -8,14 +8,24 @@ namespace Domain.Enum
 {
     public enum ErrorCodes
     {
-        // 0-11 = коды ошибок для Report 
+        // 0-9 = коды ошибок для Report 
         ReportsNotFound = 0,
         ReportNotFound = 1,
         ReportAlreadyExists = 2,
-        
-        UserNotFound = 11,
 
-        IternalServerError = 10
-        
+        // 10-19 = коды ошибок для User
+        UserNotFound = 10,
+
+        IternalServerError = 11,
+
+        // 20-29 = коды ошибок для TaskEntity 
+        TasksEntityNotFound = 20,
+        TaskEntityNotFound = 21,
+        TaskEntityAlreadyExists = 22,
+
+        // 30-39 = коды ошибок для TimeSheet
+        TimeSheetsNotFound = 30,
+        TimeSheetNotFound = 31,
+        TimeSheetAlreadyExists = 32,
     }
 }

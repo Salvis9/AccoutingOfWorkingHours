@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Domain.Dto.Report;
+using Domain.Dto.Task;
 using Domain.Entity;
 using System;
 using System.Collections.Generic;
@@ -9,18 +9,16 @@ using System.Threading.Tasks;
 
 namespace Application.Mapping
 {
-    public class ReportMapping : Profile
+    public class TaskEntityMapping : Profile
     {
-        public ReportMapping()
+        public TaskEntityMapping()
         {
-            CreateMap<Report, ReportDto>()
+            CreateMap<TaskEntity, TaskEntityDto>()
                 .ForCtorParam(ctorParamName: "Id", m => m.MapFrom(s => s.Id))
                 .ForCtorParam(ctorParamName: "Name", m => m.MapFrom(s => s.Name))
-                .ForCtorParam(ctorParamName: "Description", m => m.MapFrom(s => s.Description))
                 .ForCtorParam(ctorParamName: "IsActive", m => m.MapFrom(s => s.IsActive))
                 .ForCtorParam(ctorParamName: "CreatedAt", m => m.MapFrom(s => s.CreatedAt))
                 .ReverseMap();
         }
-        
     }
 }

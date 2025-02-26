@@ -97,6 +97,60 @@ namespace Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Задача с таким названием уже существует.
+        /// </summary>
+        internal static string TaskEntityAlreadyExists {
+            get {
+                return ResourceManager.GetString("TaskEntityAlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Задача не найдена.
+        /// </summary>
+        internal static string TaskEntityNotFound {
+            get {
+                return ResourceManager.GetString("TaskEntityNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Задачи не найдены.
+        /// </summary>
+        internal static string TasksEntityNotFound {
+            get {
+                return ResourceManager.GetString("TasksEntityNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Проводка с таким названием уже существует.
+        /// </summary>
+        internal static string TimeSheetAlreadyExists {
+            get {
+                return ResourceManager.GetString("TimeSheetAlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Проводка не найдена.
+        /// </summary>
+        internal static string TimeSheetNotFound {
+            get {
+                return ResourceManager.GetString("TimeSheetNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Проводки не найдены.
+        /// </summary>
+        internal static string TimeSheetsNotFound {
+            get {
+                return ResourceManager.GetString("TimeSheetsNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Пользователь не найден.
         /// </summary>
         internal static string UserNotFound {

@@ -44,7 +44,7 @@ namespace Application.Services
             {
                 reports = await _reportRepository.GetAll()
                     .Where(x => x.UserId == userId)
-                    .Select(x => new ReportDto(x.Id, x.Name, x.Description, x.CreatedAt.ToLongDateString()))
+                    .Select(x => new ReportDto(x.Id, x.Name, x.Description, x.IsActive, x.CreatedAt.ToLongDateString()))
                     .ToArrayAsync();
             }
             catch (Exception ex)
@@ -83,7 +83,7 @@ namespace Application.Services
                    // .FirstOrDefaultAsync(x => x.Id == id);
                 report = _reportRepository.GetAll()
                     .AsEnumerable()
-                    .Select(x => new ReportDto(x.Id, x.Name, x.Description, x.CreatedAt.ToLongDateString()))
+                    .Select(x => new ReportDto(x.Id, x.Name, x.Description, x.IsActive, x.CreatedAt.ToLongDateString()))
                     .FirstOrDefault(x => x.Id == id);
             }
             catch (Exception ex)
@@ -198,6 +198,7 @@ namespace Application.Services
 
                 report.Name = dto.Name;
                 report.Description = dto.Description;
+                report.IsActive = dto.IsActive;
 
                 await _reportRepository.UpdateAsync(report);
                 return new BaseResult<ReportDto>()

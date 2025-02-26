@@ -19,16 +19,16 @@ namespace DAL.Repositories
         {
             return _dbContext.Set<TEntity>();
         }
-        public async Task<TEntity> CreateAsync(TEntity entity)
+        public Task<TEntity> CreateAsync(TEntity entity)
         {
             if (entity == null)
             {
                 throw new ArgumentNullException("Entity is null");
             }
-            await _dbContext.AddAsync(entity);
+            _dbContext.AddAsync(entity);
             _dbContext.SaveChanges();
 
-            return entity;
+            return Task.FromResult(entity);
         }
         public Task<TEntity> UpdateAsync(TEntity entity)
         {

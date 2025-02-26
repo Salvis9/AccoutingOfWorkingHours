@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Dto.Report
+namespace Domain.Dto.TimeSheet
 {
-    public record UpdateReportDto (long Id, string Name, string Description, bool IsActive);
+    public record UpdateTimeSheetDto(long Id, double Hours, string Description);
 }

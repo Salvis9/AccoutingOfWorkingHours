@@ -1,6 +1,6 @@
 ﻿using Domain.Entity;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,18 +9,17 @@ using System.Threading.Tasks;
 
 namespace DAL.Configurations
 {
-    public class ReportConfiguration : IEntityTypeConfiguration<Report>
+    public class TaskEntityConfiguration : IEntityTypeConfiguration<TaskEntity>
     {
-        public void Configure(EntityTypeBuilder<Report> builder)
+        public void Configure(EntityTypeBuilder<TaskEntity> builder)
         {
             builder.Property(x => x.Id).ValueGeneratedOnAdd();
             builder.Property(x => x.Name).IsRequired().HasMaxLength(100);
-            builder.Property(x => x.Description).IsRequired().HasMaxLength(2000);
             builder.Property(x => x.IsActive).IsRequired();
 
-            builder.HasMany<TaskEntity>(x => x.TasksEntity)
-                .WithOne(x => x.Report)
-                .HasForeignKey(x => x.ReportId)
+            builder.HasMany<TimeSheet>(x => x.TimeSheets)
+                .WithOne(x => x.TaskEntity)
+                .HasForeignKey(x => x.TaskEntityId)
                 .HasPrincipalKey(x => x.Id);
         }
     }

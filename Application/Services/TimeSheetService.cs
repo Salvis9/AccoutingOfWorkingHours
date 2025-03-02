@@ -115,6 +115,8 @@ namespace Application.Services
             TimeSheetDto[] timeSheets;
             try
             {
+                // временно, т.к. PostgreSql возвращает дату с UTC. В будущем исправить поля в СУБД
+                // selectedDate уменьшает время на 3 часа и получается не 27 число, а 26
                 timeSheets = await _timeSheetRepository.GetAll()
                     .Where(x => x.UserId == userId && x.CreatedAt.Date == date.Date)
                     .Select(x => new TimeSheetDto(x.Id, x.Hours, x.Description, x.CreatedAt.ToLongDateString()))
@@ -229,10 +231,10 @@ namespace Application.Services
             {
                 var taskEntity = await _taskEntityRepository.GetAll().FirstOrDefaultAsync(x => x.Id == dto.TaskEntityId);
                 // Что передавать в timeSheet??? Hours??? у других сервисов передавалось Name
-                var timeSheet = await _timeSheetRepository.GetAll().FirstOrDefaultAsync(x => x.Hours == dto.Hours);
+                var timeSheet = await _timeSheetRepository.GetAll().FirstOrDefaultAsync(x => x.Description == dto.Description);
                 // Подсчет суммы часов всех проводок за один день для пользователя. Далее отправка в валидатор, если >24, то нельзя
                 var existingHours = await _timeSheetRepository.GetAll()
-                    .Where(x => x.UserId == timeSheet.UserId && x.CreatedAt.Date == timeSheet.CreatedAt.Date)
+                    .Where(x => x.UserId == dto.UserId && x.CreatedAt.Date == DateTime.Now.Date)
                     .SumAsync(x => x.Hours);
 
                 var resultCreate = _timeSheetValidator.CreateValidator(timeSheet, taskEntity);
@@ -244,7 +246,7 @@ namespace Application.Services
                         ErrorCode = resultCreate.ErrorCode
                     };
                 }
-                var resultHoursLimit = _timeSheetValidator.HoursLimitPerDayValidator(timeSheet, existingHours);
+                var resultHoursLimit = _timeSheetValidator.HoursLimitPerDayValidator(dto.Hours, existingHours);
                 if (!resultHoursLimit.IsSuccess)
                 {
                     return new BaseResult<TimeSheetDto>()
@@ -314,7 +316,7 @@ namespace Application.Services
             {
                 var timeSheet = await _timeSheetRepository.GetAll().FirstOrDefaultAsync(x => x.Id == dto.Id);
                 var existingHours = await _timeSheetRepository.GetAll()
-                    .Where(x => x.UserId == timeSheet.UserId && x.CreatedAt.Date == timeSheet.CreatedAt.Date)
+                    .Where(x => x.CreatedAt.Date == DateTime.Now.Date)
                     .SumAsync(x => x.Hours);
 
                 var resultOnNull = _timeSheetValidator.ValidateOnNull(timeSheet);
@@ -327,7 +329,7 @@ namespace Application.Services
                     };
                 }
 
-                var resultHoursLimit = _timeSheetValidator.HoursLimitPerDayValidator(timeSheet, existingHours);
+                var resultHoursLimit = _timeSheetValidator.HoursLimitPerDayValidator(dto.Hours, existingHours);
                 if (!resultHoursLimit.IsSuccess)
                 {
                     return new BaseResult<TimeSheetDto>()

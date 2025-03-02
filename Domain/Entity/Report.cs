@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Entity
 {
-    public class Report : IEntityId<long>, IAuditable
+    public class Report : BaseEntity, IEntityId<long>, IAuditable
     {
         public long Id { get; set; }
         public string Name { get; set; }
@@ -17,10 +17,5 @@ namespace Domain.Entity
         public User User { get; set; }
         public long UserId { get; set; }
         public List<TaskEntity> TasksEntity { get; set; }
-        public DateTime CreatedAt { get ; set; }
-        public long CreatedBy { get; set; }
-        public DateTime? UpdatedAt { get; set; }
-        public long? UpdatedBy { get; set; }
-        
     }
 }

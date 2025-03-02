@@ -1,13 +1,15 @@
 ﻿using Domain.Interface;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Domain.Entity
 {
-    public class TimeSheet : IEntityId<long>, IAuditable
+    public class TimeSheet : BaseEntity, IEntityId<long>, IAuditable
     {
         public long Id { get; set; }
         public double Hours { get; set; }
@@ -16,9 +18,5 @@ namespace Domain.Entity
         public long UserId { get; set; }
         public TaskEntity TaskEntity { get; set; }
         public long TaskEntityId { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public long CreatedBy { get; set; }
-        public DateTime? UpdatedAt { get; set; }
-        public long? UpdatedBy { get; set; }
     }
 }

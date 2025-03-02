@@ -15,7 +15,7 @@ namespace DAL
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
-            
+            //Database.EnsureDeleted();
             // Альтернатива создания БД - миграции. Изучить их реализацию
             Database.EnsureCreated();
         }

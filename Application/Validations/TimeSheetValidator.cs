@@ -57,9 +57,9 @@ namespace Application.Validations
             return new BaseResult();
         }
 
-        public BaseResult HoursLimitPerDayValidator(TimeSheet timeSheet, double existingHours)
+        public BaseResult HoursLimitPerDayValidator(double hours, double existingHours)
         {
-            if (existingHours + timeSheet.Hours > 24)
+            if (existingHours + hours > 24)
             {
                 return new BaseResult()
                 {

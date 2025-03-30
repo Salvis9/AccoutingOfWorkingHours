@@ -120,6 +120,18 @@
   <data name="InternalServerError" xml:space="preserve">
     <value>Internal server error</value>
   </data>
+  <data name="InvalidClientRequest" xml:space="preserve">
+    <value>InvalidClientRequest</value>
+  </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>InvalidToken</value>
+  </data>
+  <data name="PasswordIsWrong" xml:space="preserve">
+    <value>PasswordIsWrong</value>
+  </data>
+  <data name="PasswordNotEqualsPasswordConfirm" xml:space="preserve">
+    <value>Password Not Equals Password Confirm</value>
+  </data>
   <data name="ReportAlreadyExists" xml:space="preserve">
     <value>Report already exists</value>
   </data>
@@ -131,6 +143,9 @@
   </data>
   <data name="ReportsNotFound" xml:space="preserve">
     <value>Reports not found</value>
+  </data>
+  <data name="String1UserAlreadyExists" xml:space="preserve">
+    <value>UserAlreadyExists</value>
   </data>
   <data name="TaskEntityAlreadyExists" xml:space="preserve">
     <value>Task Entity Already Exists</value>

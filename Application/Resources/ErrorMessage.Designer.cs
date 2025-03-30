@@ -70,6 +70,42 @@ namespace Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to InvalidClientRequest.
+        /// </summary>
+        internal static string InvalidClientRequest {
+            get {
+                return ResourceManager.GetString("InvalidClientRequest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to InvalidToken.
+        /// </summary>
+        internal static string InvalidToken {
+            get {
+                return ResourceManager.GetString("InvalidToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PasswordIsWrong.
+        /// </summary>
+        internal static string PasswordIsWrong {
+            get {
+                return ResourceManager.GetString("PasswordIsWrong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PasswordNotEqualsPasswordConfirm.
+        /// </summary>
+        internal static string PasswordNotEqualsPasswordConfirm {
+            get {
+                return ResourceManager.GetString("PasswordNotEqualsPasswordConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Отчет с таким названием уже существует.
         /// </summary>
         internal static string ReportAlreadyExists {
@@ -165,6 +201,15 @@ namespace Application.Resources {
         internal static string TimeSheetsNotFound {
             get {
                 return ResourceManager.GetString("TimeSheetsNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UserAlreadyExists.
+        /// </summary>
+        internal static string UserAlreadyExists {
+            get {
+                return ResourceManager.GetString("UserAlreadyExists", resourceCulture);
             }
         }
         

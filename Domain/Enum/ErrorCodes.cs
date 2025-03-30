@@ -16,8 +16,11 @@ namespace Domain.Enum
 
         // 10-19 = коды ошибок для User
         UserNotFound = 10,
+        PasswordNotEqualsPasswordConfirm = 11,
+        UserAlreadyExists = 12,
+        PasswordIsWrong = 13,
 
-        IternalServerError = 11,
+        IternalServerError = 19,
 
         // 20-29 = коды ошибок для TaskEntity 
         TasksEntityNotFound = 20,
@@ -29,5 +32,7 @@ namespace Domain.Enum
         TimeSheetsNotFound = 30,
         TimeSheetNotFound = 31,
         TimeSheetAlreadyExists = 32,
+
+
     }
 }

@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace Domain.Dto.User
 {
-    public record RegisterUserDto(string Login, string Password, string PasswordConfirm)
+    public record RegisterUserDto(string Login, string Password, string PasswordConfirm);
 }

@@ -120,6 +120,18 @@
   <data name="InternalServerError" xml:space="preserve">
     <value>Внутренняя ошибка сервера</value>
   </data>
+  <data name="InvalidClientRequest" xml:space="preserve">
+    <value>InvalidClientRequest</value>
+  </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>InvalidToken</value>
+  </data>
+  <data name="PasswordIsWrong" xml:space="preserve">
+    <value>PasswordIsWrong</value>
+  </data>
+  <data name="PasswordNotEqualsPasswordConfirm" xml:space="preserve">
+    <value>PasswordNotEqualsPasswordConfirm</value>
+  </data>
   <data name="ReportAlreadyExists" xml:space="preserve">
     <value>Отчет с таким назваием уже существует</value>
   </data>
@@ -152,6 +164,9 @@
   </data>
   <data name="TimeSheetsNotFound" xml:space="preserve">
     <value>Проводки не найдены</value>
+  </data>
+  <data name="UserAlreadyExists" xml:space="preserve">
+    <value>UserAlreadyExists</value>
   </data>
   <data name="UserNotFound" xml:space="preserve">
     <value>Пользователь не найден</value>

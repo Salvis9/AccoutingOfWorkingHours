@@ -14,5 +14,6 @@ namespace Domain.Entity
         public string Password { get; set; }
         public List<Report> Reports { get; set; }
         public List<TimeSheet> TimeSheets { get; set; }
+        public UserToken UserToken { get; set; }
     }
 }

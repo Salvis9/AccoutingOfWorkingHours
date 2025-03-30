@@ -45,6 +45,8 @@ namespace Application.DependencyInjection
             services.AddScoped<IReportService, ReportService>();
             services.AddScoped<ITaskEntityService, TaskEntityService>();
             services.AddScoped<ITimeSheetService, TimeSheetService>();
+            services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<ITokenService, TokenService>();
         }
     }
 }

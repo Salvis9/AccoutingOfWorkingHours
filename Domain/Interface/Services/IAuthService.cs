@@ -13,6 +13,6 @@ namespace Domain.Interface.Services
     {
         Task<BaseResult<UserDto>> Register(RegisterUserDto dto);
 
-        Task<BaseResult<TokenDto>> Login(LoginUserDto userDto);
+        Task<BaseResult<TokenDto>> Login(LoginUserDto dto);
     }
 }

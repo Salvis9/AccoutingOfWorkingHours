@@ -27,6 +27,11 @@ namespace DAL.Configurations
                 .WithOne(x => x.User)
                 .HasForeignKey(x => x.UserId)
                 .HasPrincipalKey(x => x.Id);
+
+            //builder.HasOne<UserToken>(x => x.UserToken)
+            //    .WithOne(x => x.User)
+            //    .HasForeignKey(x => x.UserId)
+            //    .HasPrincipalKey(x => x.Id);
         }
     }
 }
